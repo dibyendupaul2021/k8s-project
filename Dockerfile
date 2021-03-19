@@ -5,6 +5,8 @@ RUN yum install -y httpd \
   upzip
 ADD https://freewebsitetemplates.com/download/space-science/space-science.zip /var/www/html/
 WORKDIR /var/www/html
+RUN systemctl start httpd
+RUN systemctl enable httpd
 RUN unzip space-science.zip
 RUN cp -rvf space-science/* .
 RUN rm -rf space-science space-science.zip
