@@ -2,7 +2,7 @@ FROM centos:latest
 MAINTAINER dibyendu_11@rediffmail.com
 RUN yum install -y httpd \
   zip \
-  upzip
+  unzip
 ADD https://freewebsitetemplates.com/download/space-science/space-science.zip /var/www/html/
 WORKDIR /var/www/html
 RUN systemctl start httpd
